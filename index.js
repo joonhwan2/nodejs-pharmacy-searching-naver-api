@@ -7,7 +7,11 @@ let axios = require("axios");
 let app = express ();
 // app 이라는 변수 하나를 더 선언하여 express객체를 할당하자     이제 이 구문을 통해 app이라는 변수는 express 모듈을 가르키게 됨
 
-let port = process.env.PORT || 80;
+let port = process.env.PORT || 5000;
+
+
+app.use(express.static('public'));
+// 커스텀 마커를 사용하기 위해 public 폴더 안 파일과 localhost:5000 연동되게 해줌
 
 app.use(express.static("public_html"));
 // express의 use 메소드를 선언하고 express.static이라고 괄호 사이에 입력한 후  public_html 로 지정하겠다
@@ -26,6 +30,12 @@ app.listen(port,function(){
 //한페이지만 이름을 pharmach_list따로 열어보겠다 
 //이 경우는 app.get으로 가능하다
 //그리고 여기 접속했을때 어떤 데이터를 보낼지 결정가능
+
+/////////
+
+////////
+
+
 app.get ("/pharmach_list", (req, res) =>  {
         let api = async() => {
             let response = null;

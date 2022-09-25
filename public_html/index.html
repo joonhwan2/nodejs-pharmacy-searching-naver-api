@@ -65,28 +65,62 @@
                             }
                             var map = new naver.maps.Map(mapDiv, mapOptions);
 
-//////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////   수정 1         ////////////////////////////////////////
                                 var position = new naver.maps.LatLng(XY.lat, XY.lng);
 
                                 var map = new naver.maps.Map('map', {
                                     center: position,
-                                    zoom: 14
-                                });
-
-                                var markerOptions = {
-                                    position: position,
-                                    map: map,
+                                    zoom: 14,
                                     icon: {
+                
                                         content: [
                                         '<img src="/img/sugar.jpg" style="position:absolute; top:2px; left:2px; width:32px; height:32px; object-fit:cover; object-position:center center; border-radius:50%; z-index:6">',
-                                        '<img src="/map-pin-afterUser.svg" style="position;absolute; top:0; left:0; z-index:5">',
+                                        //'<img src="/map-pin-afterUser.svg" style="position;absolute; top:0; left:0; z-index:5">',
                                         ].join(''),
-
-                                        anchor: new naver.maps.Point(25, 26)
+                                        
+                        
+                                        anchor: new naver.maps.Point(25, 26),
                                     }
-                                };
-                                var marker = new naver.maps.Marker(markerOptions);                            
+                                });
 
+                 
+//////////////////////////////////////    수정 2 ///////////////////////
+
+
+
+playAlert = setInterval(function() {
+    navigator.geolocation.getCurrentPosition(onSuccessGeolocation);
+    
+}, 1500);
+
+
+
+
+
+function onSuccessGeolocation(position) {
+        var markerOptions = {
+            position: new naver.maps.LatLng(XY.lat, XY.lng),
+            map: map,
+            icon: {
+                
+                content: [
+                '<img src="/img/sugar.jpg" style="position:absolute; top:2px; left:2px; width:32px; height:32px; object-fit:cover; object-position:center center; border-radius:50%; z-index:6">',
+                //'<img src="/map-pin-afterUser.svg" style="position;absolute; top:0; left:0; z-index:5">',
+                ].join(''),
+                
+
+                anchor: new naver.maps.Point(25, 26)
+            }
+        };
+        var marker = new naver.maps.Marker(markerOptions); 
+        
+        
+        console.log('Coordinates: ' + location.toString());
+    }
+    
+    
+     
+//////////////////////////////////////    수정2 ///////////////////////
 
 
 
@@ -98,7 +132,7 @@
                                 fillOpacity: 0.2
                             });
                             
- //////////////////////////////////////////////////////////////////////////////
+///////////////////////////////   수정 1         ////////////////////////////////////////
                             
                             data.items.item.forEach(function(it, index){
                                 let dutyName = it.dutyName;
@@ -224,7 +258,7 @@
   
                 }
                 return XY;     
-            }        
+            }      
         </script>    
 </html>
 

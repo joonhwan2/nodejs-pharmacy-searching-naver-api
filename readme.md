@@ -31,3 +31,7 @@ npm install axios
 
 완성본은 이렇습니다\
 https://pharmacy1234.herokuapp.com/
+
+<br>
+
+혹시 쿠키런 설탕노움 아이콘이 안보인다면 강력한 새로고침을 해보거나 조금 기다려보시면 나옵니다ㅎ

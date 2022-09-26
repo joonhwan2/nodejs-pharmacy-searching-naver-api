@@ -1,7 +1,7 @@
-1. 로컬디스크 C에 폴더`nodejs_pharmacy` 만듭시다
-2. C:\nodejs_pharmacy> 경로로 맞추어
+1. 바탕화면에 폴더`nodejs_pharmacy` 만듭시다
+2. 저의 경우 C:\Users\rhwns\Desktop\nodejs_pharmacy> 경로로 맞추어
 ```console
-npm init
+git clone https://github.com/joonhwan2/nodejs-pharmacy-searching-naver-api.git
 ```
 끝나면 그 폴더로 파일들을 옮기고
 ```console
